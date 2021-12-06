@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Wanti-Wanti | play.kompas.com</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css?v=3">
+    <script src="src/TweenMax.min.js"></script>
+    <script src="src/game.js?v=3" charset="utf-8"></script>
+    <script type='text/javascript' src='src/anew.js?v=3'></script>
+
+</head>
+
+<body id='body'>
+    <audio id='pilih'>
+        <source src="fx/rotate.mp3" type="audio/mpeg">
+    </audio>
+    <audio id='jadi'>
+        <source src="fx/jadi.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id='bgsfx' loop>
+        <source src="fx/beautifulrussia.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container" id='container'>
+        <div class="grid" id='boardgrid'></div>
+        <div id='gametimer'>
+        <label id="minutes">00</label>
+<label id="colon">:</label>
+<label id="seconds">00</label>
+        </div>
+        <div id='kenalan'>
+            Yuk.. Kenalan sama karakter-karakter lucu di game ini
+        </div>
+
+        <div class="karakter" id='kar'>
+            <img src="assets/Meko1d.png" class='roundeedge'>
+            <img src="assets/kokom.png" class='roundeedge'>
+            <img src="assets/BeOros.png" class='roundeedge'>
+            <img src="assets/Diem-Pee2.png" class='roundeedge'>
+            <img src="assets/Foxie_Boxy.png" class='roundeedge'>
+            <img src="assets/Esso.png" class='roundeedge'>
+            <img src="assets/Ohemjie.png" class='roundeedge'>
+            <img src="assets/nana.png" class='roundeedge'>
+            <img src="assets/Rexy.png" class='roundeedge'>
+            
+        </div>
+    </div>
+
+    <div id='lockscreen'></div>
+    <img src="assets/mulai.png" id='mulai'>
+
+
+
+</body>
+<script>
+    var minutesLabel = document.getElementById("minutes");
+    var secondsLabel = document.getElementById("seconds");
+    var totalSeconds = 0;
+    
+
+    function setTime() {
+        ++totalSeconds;
+        secondsLabel.innerHTML = pad(totalSeconds % 60);
+        minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+    }
+
+    function pad(val) {
+        var valString = val + "";
+        if (valString.length < 2) {
+            return "0" + valString;
+        } else {
+            return valString;
+        }
+    }
+
+    
+
+</script>
+
+</html>
